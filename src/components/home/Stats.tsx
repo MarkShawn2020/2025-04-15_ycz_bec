@@ -7,19 +7,19 @@ interface Stat {
   id: number;
   label: string;
   value: number;
-  startValue?: number;
+  startValue: number;
   prefix?: string;
   suffix?: string;
 }
 
 // Define the stats to display
 const stats: Stat[] = [
-  { id: 1, label: 'Founded', value: 2018, startValue: new Date().getFullYear() + 1 },
-  { id: 2, label: 'Alumni', value: 1000, suffix: '+' },
-  { id: 3, label: "24'-25' Enrollment ", value: 198 },
-  { id: 4, label: 'Countries', value: 5 },
-  { id: 5, label: 'Cities', value: 10, suffix: '+' },
-  { id: 6, label: 'Schools', value: 29 }
+  { id: 1, label: 'Founded', value: 2018, startValue: new Date().getFullYear() },
+  { id: 2, label: 'Alumni', value: 1000, startValue: 0, suffix: '+' },
+  { id: 3, label: "24'-25' Enrollment ", value: 198, startValue: 0 },
+  { id: 4, label: 'Countries', value: 5, startValue: 0 },
+  { id: 5, label: 'Cities', value: 10, startValue: 0, suffix: '+' },
+  { id: 6, label: 'Schools', value: 29, startValue: 0 }
 ];
 
 export default function Stats() {
@@ -33,13 +33,12 @@ export default function Stats() {
     if (!stat) return;
 
     setIsCountingUp(true);
-    const startValue = stat.startValue !== undefined ? stat.startValue : 0;
-    setDisplayValue(startValue);
+    setDisplayValue(stat.startValue);
 
     const duration = 1500; // Animation duration in milliseconds
-    const valueChange = stat.value - startValue;
+    const valueChange = stat.value - stat.startValue;
     const increment = valueChange / (duration / 16); // 60fps
-    let currentValue = startValue;
+    let currentValue = stat.startValue;
 
     const timer = setInterval(() => {
       currentValue += increment;
