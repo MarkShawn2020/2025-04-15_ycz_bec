@@ -4,31 +4,22 @@ import Link from 'next/link';
 const locations = [
   {
     id: 1,
-    country: 'France',
-    city: 'Rennes, France',
-    description: 'Rennes, the capital of Brittany, allows you to experience the distinct Breton culture as you simultaneously master the French language and discover Frances place in the world.',
-    imageSrc: '/france-hero.jpeg',
+    country: 'USA',
+    city: 'Boston, MA',
+    description: "BEC US program will be hosted on MIT/Harvard/BU campus with dormitory, classrooms, and meals provided. All courses are designed and taught by MIT and Harvard professors and students. ",
+    imageSrc: '/图片1.png',
     altText: 'View of Rennes, France',
     link: '/france'
   },
   {
     id: 2,
-    country: 'Spain',
-    city: 'Zaragoza, Spain',
-    description: 'Zaragoza is Spains fifth-largest city and is located halfway between Madrid and Barcelona. Relatively unspoiled by tourism, it is an ideal location for immersing yourself in the local community.',
-    imageSrc: '/spain-hero.jpeg',
+    country: 'China',
+    city: 'Beijing, China',
+    description: "BEC China program will be hosted on Tsinghua/Peking campus with dormitory, classrooms, and meals provided. All courses are designed and taught by Tsinghua and Peking University professors and students. ",
+    imageSrc: '/图片2.png',
     altText: 'View of Zaragoza, Spain',
     link: '/spain'
   },
-  {
-    id: 3,
-    country: 'Italy',
-    city: 'Viterbo, Italy',
-    description: 'Viterbo provides the ideal launching point - big enough to offer an exciting day-to-day life, small enough to feel like home and only a 90-minute train ride from Rome.',
-    imageSrc: '/italy-hero.jpeg',
-    altText: 'View of Viterbo, Italy',
-    link: '/italy'
-  }
 ];
 
 export default function LocationCards() {
@@ -38,7 +29,7 @@ export default function LocationCards() {
         {locations.map((location, index) => (
           <div
             key={location.id}
-            className={`flex flex-col md:flex-row items-center mb-16 last:mb-0 ${
+            className={`flex flex-col md:flex-row items-center mb-16 last:mb-0 gap-4 ${
               index % 2 === 1 ? 'md:flex-row-reverse' : ''
             }`}
           >
@@ -58,12 +49,12 @@ export default function LocationCards() {
             <div className={`w-full md:w-1/2 md:px-8 ${index % 2 === 1 ? 'md:pr-0' : 'md:pl-0'}`}>
               <h3 className="text-2xl font-bebas text-sya-blue uppercase mb-4">{location.city}</h3>
               <p className="text-gray-700 mb-6">{location.description}</p>
-              <Link
+              {/* <Link
                 href={location.link}
                 className="inline-block bg-sya-blue hover:bg-sya-navy text-white font-semibold py-2 px-6 rounded transition-colors"
               >
                 Learn more
-              </Link>
+              </Link> */}
             </div>
           </div>
         ))}
