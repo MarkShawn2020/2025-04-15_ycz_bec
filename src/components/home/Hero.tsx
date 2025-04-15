@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
         }
       } else {
         video.pause();
-        video.currentTime = 0;
+        // video.currentTime = 0;
       }
     });
   }, [activeIndex, isPaused]);
@@ -56,14 +56,11 @@ const Hero: React.FC = () => {
 
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % countryVideos.length);
-    }, 3500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isPaused, countryVideos.length]);
 
-  const goToSlide = (index: number) => {
-    setActiveIndex(index);
-  };
 
   const togglePause = () => {
     setIsPaused(!isPaused);
@@ -99,17 +96,6 @@ const Hero: React.FC = () => {
         </h1>
       </div>
 
-      {/* Navigation dots */}
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center space-x-3">
-        {countryVideos.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${activeIndex === index ? 'bg-white' : 'bg-white bg-opacity-50'}`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
 
       {/* Controls */}
       <div className="absolute bottom-4 right-4 flex space-x-2">
