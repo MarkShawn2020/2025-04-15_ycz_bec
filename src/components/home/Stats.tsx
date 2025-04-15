@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 
 // Define the stats to display
 const stats = [
-  { id: 1, label: 'Founded', value: 1964 },
-  { id: 2, label: 'Students receive financial aid', value: 40, suffix: '%' },
-  { id: 3, label: 'SYA Alumni', value: 9000, prefix: '+' },
-  { id: 4, label: 'Alumni that consider themselves fluent', value: 90, suffix: '%' },
-  { id: 5, label: 'Scholarships', value: 10, prefix: '+' },
-  { id: 6, label: 'Alumni continued to study a foreign language', value: 93, suffix: '%' }
+  { id: 1, label: 'Founded', value: 2018 },
+  { id: 2, label: 'Alumni', value: 1000, suffix: '+' },
+  { id: 3, label: "24’-25’ Enrollment ", value: 198 },
+  { id: 4, label: 'Countries', value: 5, },
+  { id: 5, label: 'Cities', value: 10, suffix: '+' },
+  { id: 6, label: 'Schools', value:29 }
 ];
 
 export default function Stats() {
