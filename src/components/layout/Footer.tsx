@@ -5,36 +5,7 @@ import { Facebook, Instagram, Youtube, Linkedin, Video } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-sya-blue text-white">
-      {/* Keep Exploring Section */}
-      <div className="bg-sya-light-blue bg-opacity-30 py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <h3 className="text-2xl font-bebas text-sya-blue mb-4 md:mb-0">Keep Exploring SYA</h3>
-            <div className="flex space-x-4">
-              <Link
-                href="https://share.hsforms.com/1KfafBdDyT5uZFQXAt72KIQ3eef"
-                className="bg-white text-sya-blue px-6 py-2 text-sm font-semibold rounded border border-sya-blue hover:bg-sya-blue hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                INQUIRE
-              </Link>
-              <Link
-                href="/apply-now"
-                className="bg-white text-sya-blue px-6 py-2 text-sm font-semibold rounded border border-sya-blue hover:bg-sya-blue hover:text-white transition-colors"
-              >
-                APPLY
-              </Link>
-              <Link
-                href="/alumni-friends/make-a-gift"
-                className="bg-white text-sya-blue px-6 py-2 text-sm font-semibold rounded border border-sya-blue hover:bg-sya-blue hover:text-white transition-colors"
-              >
-                GIVE
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-6">
@@ -43,7 +14,7 @@ export default function Footer() {
           <div className="col-span-1">
             <Link href="/" className="block mb-4">
               <Image
-                src="https://ext.same-assets.com/2981809292/3108881295.svg"
+                src="/logo.png"
                 alt="BEC Logo"
                 width={120}
                 height={48}
@@ -51,8 +22,9 @@ export default function Footer() {
               />
             </Link>
             <address className="not-italic text-sm mb-4">
-              120 Water Street, Suite 310,<br />
-              North Andover, MA 01845<br />
+            105 Ridge Lane  <br />
+            Waltham, MA, 02452
+            
               <a href="tel:978.725.6828" className="hover:underline">978.725.6828</a>
             </address>
           </div>
@@ -62,8 +34,8 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-between">
               <div>
                 <Link href="mailto:linasong@alum.mit.edu" className="text-sm hover:underline block mb-2">Contact Us</Link>
-                <Link href="/site-map" className="text-sm hover:underline block mb-2">Site Map</Link>
-                <Link href="/privacy-policy" className="text-sm hover:underline block mb-2">Privacy Policy</Link>
+                {/* <Link href="/site-map" className="text-sm hover:underline block mb-2">Site Map</Link> */}
+                {/* <Link href="/privacy-policy" className="text-sm hover:underline block mb-2">Privacy Policy</Link> */}
               </div>
 
               {/* Social Links */}
