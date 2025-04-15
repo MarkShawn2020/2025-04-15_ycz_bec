@@ -2,14 +2,24 @@
 
 import { useState, useEffect } from 'react';
 
+// Define the stats interface with all possible properties
+interface Stat {
+  id: number;
+  label: string;
+  value: number;
+  startValue?: number;
+  prefix?: string;
+  suffix?: string;
+}
+
 // Define the stats to display
-const stats = [
-  { id: 1, label: 'Founded', value: 2018 },
+const stats: Stat[] = [
+  { id: 1, label: 'Founded', value: 2018, startValue: new Date().getFullYear() + 1 },
   { id: 2, label: 'Alumni', value: 1000, suffix: '+' },
-  { id: 3, label: "24’-25’ Enrollment ", value: 198 },
-  { id: 4, label: 'Countries', value: 5, },
+  { id: 3, label: "24'-25' Enrollment ", value: 198 },
+  { id: 4, label: 'Countries', value: 5 },
   { id: 5, label: 'Cities', value: 10, suffix: '+' },
-  { id: 6, label: 'Schools', value:29 }
+  { id: 6, label: 'Schools', value: 29 }
 ];
 
 export default function Stats() {
@@ -23,15 +33,18 @@ export default function Stats() {
     if (!stat) return;
 
     setIsCountingUp(true);
-    setDisplayValue(0);
+    const startValue = stat.startValue !== undefined ? stat.startValue : 0;
+    setDisplayValue(startValue);
 
     const duration = 1500; // Animation duration in milliseconds
-    const increment = stat.value / (duration / 16); // 60fps
-    let currentValue = 0;
+    const valueChange = stat.value - startValue;
+    const increment = valueChange / (duration / 16); // 60fps
+    let currentValue = startValue;
 
     const timer = setInterval(() => {
       currentValue += increment;
-      if (currentValue >= stat.value) {
+      if ((increment >= 0 && currentValue >= stat.value) || 
+          (increment < 0 && currentValue <= stat.value)) {
         clearInterval(timer);
         setDisplayValue(stat.value);
         setIsCountingUp(false);
@@ -53,7 +66,7 @@ export default function Stats() {
   }, []);
 
   // Format the display value with prefix/suffix
-  const formatValue = (stat: typeof stats[0], value: number) => {
+  const formatValue = (stat: Stat, value: number) => {
     return `${stat.prefix || ''}${value}${stat.suffix || ''}`;
   };
 
