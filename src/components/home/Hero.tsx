@@ -1,114 +1,138 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import type React from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-type HeroSlide = {
-  id: number;
-  country: string;
-  title: string;
-  imageSrc: string;
-  altText: string;
-};
+interface CountryVideo {
+  country: string
+  videoUrl: string;
+}
 
-const slides: HeroSlide[] = [
-  {
-    id: 1,
-    country: "FRANCE",
-    title: "A LIFE-CHANGING STUDY ABROAD EXPERIENCE",
-    imageSrc: "/france-hero.jpeg",
-    altText: "Aerial view of Rennes, France"
-  },
-  {
-    id: 2,
-    country: "ITALY",
-    title: "A LIFE-CHANGING STUDY ABROAD EXPERIENCE",
-    imageSrc: "/italy-hero.jpeg",
-    altText: "View of Viterbo, Italy"
-  },
-  {
-    id: 3,
-    country: "SPAIN",
-    title: "A LIFE-CHANGING STUDY ABROAD EXPERIENCE",
-    imageSrc: "/spain-hero.jpeg",
-    altText: "View of Zaragoza, Spain"
-  }
-];
+const Hero: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const countryVideos: CountryVideo[] = [
+    {
+      country: 'NEW YORK',
+      videoUrl: '/视频1.mp4'
+    },
+    {
+      country: 'BOSTON',
+      videoUrl: '/视频2.mp4'
+    },
+    {
+      country: 'BEI JING',
+      videoUrl: '/视频4.mp4'
+    },
+    {
+      country: 'SHANG HAI',
+      videoUrl: '/视频3.mp4'
+    },
 
-  // Auto rotate slides every 6 seconds
+  ];
+
   useEffect(() => {
+    // Play the active video and pause others
+    videoRefs.current.forEach((video, index) => {
+      if (!video) return;
+      
+      if (index === activeIndex) {
+        if (!isPaused) {
+          video.play().catch(err => console.log('Video play error:', err));
+        } else {
+          video.pause();
+        }
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, [activeIndex, isPaused]);
+
+  useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+      setActiveIndex((prevIndex) => (prevIndex + 1) % countryVideos.length);
+    }, 3500);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused, countryVideos.length]);
 
-  const goToNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const goToSlide = (index: number) => {
+    setActiveIndex(index);
   };
 
-  const goToPrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const togglePause = () => {
+    setIsPaused(!isPaused);
   };
+
+  const currentVideo = countryVideos[activeIndex];
 
   return (
-    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden">
-      {/* Slides */}
-      {slides.map((slide, index) => (
+    <div className="relative h-[70vh] min-h-[500px] bg-gray-800 overflow-hidden">
+      {/* Background Videos */}
+      {countryVideos.map((video, index) => (
         <div
-          key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
+          key={video.country}
+          className={`absolute inset-0 transition-opacity duration-1000 ${activeIndex === index ? 'opacity-100' : 'opacity-0'}`}
         >
-          <Image
-            src={slide.imageSrc}
-            alt={slide.altText}
-            fill
-            priority
-            className="object-cover"
+          <video
+            ref={el => { videoRefs.current[index] = el; }}
+            className="absolute inset-0 w-full h-full object-cover"
+            src={video.videoUrl}
+            muted
+            loop
+            playsInline
           />
-          <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20">
-            <h1 className="hero-text mb-4">{slide.country}</h1>
-            <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto px-4">{slide.title}</p>
-          </div>
+          {/* Subtle overlay for better text readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-30" />
         </div>
       ))}
 
-      {/* Navigation controls */}
-      <div className="absolute bottom-10 left-0 right-0 z-30 flex justify-center space-x-2">
-        {slides.map((_, index) => (
+      {/* Country name overlay */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <h1 className="text-white text-[150px] md:text-[200px] lg:text-[250px] font-bebas tracking-wide uppercase">
+          {currentVideo.country}
+        </h1>
+      </div>
+
+      {/* Navigation dots */}
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center space-x-3">
+        {countryVideos.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'
-            }`}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-colors ${activeIndex === index ? 'bg-white' : 'bg-white bg-opacity-50'}`}
             aria-label={`Go to slide ${index + 1}`}
-          ></button>
+          />
         ))}
       </div>
 
-      {/* Previous/Next buttons */}
-      <button
-        className="absolute left-5 top-1/2 transform -translate-y-1/2 z-30 p-2 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-75 transition-all"
-        onClick={goToPrevSlide}
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        className="absolute right-5 top-1/2 transform -translate-y-1/2 z-30 p-2 rounded-full bg-black bg-opacity-50 text-white hover:bg-opacity-75 transition-all"
-        onClick={goToNextSlide}
-        aria-label="Next slide"
-      >
-        <ChevronRight size={24} />
-      </button>
+      {/* Controls */}
+      <div className="absolute bottom-4 right-4 flex space-x-2">
+        <button
+          onClick={togglePause}
+          aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
+          className="bg-white bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50 transition"
+        >
+          <span className="sr-only">{isPaused ? "Play" : "Pause"}</span>
+          {isPaused ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          )}
+        </button>
+      </div>
     </div>
   );
-}
+};
+
+export default Hero;
