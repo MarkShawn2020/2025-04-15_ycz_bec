@@ -11,10 +11,16 @@ export default function Home() {
       <Stats />
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">A LIFE-CHANGING STUDY ABROAD EXPERIENCE</h2>
+          <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">About Boston Education Consulting
+          </h2>
           <p className="text-lg text-center max-w-4xl mx-auto mb-16">
-            BEC (SYA) is a nonprofit organization focused on providing immersive study abroad programs to high school students.
-            With over 8,500 alumni since 1964, SYA is a school fully accredited by the New England Association of Schools and Colleges (NEASC).
+          Boston Education Consulting (BEC) is a college access organization providing educational support for high school and middle school students. 
+          
+          Each year, we bring groups of highly selective domestic and international students to visit Boston or China for a rigorous 2-week summer program or 1-week winter program. 
+          
+          All programs are STEM focused with introductory engineering courses, hands-on classes,  experimental labs, and team-based projects. 
+          
+          The program is designed for students to explore the world of engineering, gain experience of college life, and take on a culture adventure.
           </p>
         </div>
       </section>
