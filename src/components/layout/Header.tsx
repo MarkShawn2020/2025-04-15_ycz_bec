@@ -46,7 +46,7 @@ export default function Header() {
                 <Link href="/life-at-sya" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Past Events
                 </Link>
-                <Link href="/alumni-friends" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="mailto:linasong@alum.mit.edu" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Contact Us
                 </Link>
 
@@ -85,7 +85,7 @@ export default function Header() {
                 <Link href="/life-at-sya" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Past Events
                 </Link>
-                <Link href="/alumni-friends" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="mailto:linasong@alum.mit.edu" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Contact Us
                 </Link>
             </nav>

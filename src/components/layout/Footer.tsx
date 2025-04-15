@@ -61,7 +61,7 @@ export default function Footer() {
           <div className="col-span-3">
             <div className="flex flex-col md:flex-row justify-between">
               <div>
-                <Link href="/about/contact" className="text-sm hover:underline block mb-2">Contact Us</Link>
+                <Link href="mailto:linasong@alum.mit.edu" className="text-sm hover:underline block mb-2">Contact Us</Link>
                 <Link href="/site-map" className="text-sm hover:underline block mb-2">Site Map</Link>
                 <Link href="/privacy-policy" className="text-sm hover:underline block mb-2">Privacy Policy</Link>
               </div>
