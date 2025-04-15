@@ -40,7 +40,7 @@ const Footer = () => {
               <Link href="/" className="block">
                 <img
                   src="https://ext.same-assets.com/3108881295.svg"
-                  alt="School Year Abroad"
+                  alt="BEC"
                   className="h-12"
                 />
               </Link>

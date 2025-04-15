@@ -106,7 +106,7 @@ const Header = () => {
               <Link href="/" className="block">
                 <img
                   src="https://ext.same-assets.com/3108881295.svg"
-                  alt="School Year Abroad"
+                  alt="BEC"
                   className="h-12 md:h-16"
                 />
               </Link>
@@ -116,19 +116,19 @@ const Header = () => {
             <div className="hidden lg:flex items-center space-x-8">
               <nav className="space-x-6 text-sya-navy font-bold uppercase text-sm">
                 <Link href="/about" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
-                  About School Year Abroad
+                  About BEC
                 </Link>
                 <Link href="/admission" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
-                  Admission
+                  US Program
                 </Link>
                 <Link href="/programs" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
-                  Programs
+                  China Program
                 </Link>
                 <Link href="/life-at-sya" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
-                  Life at SYA
+                  Past Events
                 </Link>
                 <Link href="/alumni-friends" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
-                  Alumni & Friends
+                  Contact US
                 </Link>
               </nav>
 
@@ -160,7 +160,7 @@ const Header = () => {
 
           <nav className="mb-6 space-y-6">
             <div>
-              <h4 className="font-bold text-sya-navy mb-2">About School Year Abroad</h4>
+              <h4 className="font-bold text-sya-navy mb-2">About BEC</h4>
               <ul className="pl-4 space-y-2">
                 <li><a href="#" className="text-gray-700 hover:text-sya-red">Mission</a></li>
                 <li><a href="#" className="text-gray-700 hover:text-sya-red">Contact SYA</a></li>

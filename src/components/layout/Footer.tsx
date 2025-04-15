@@ -44,7 +44,7 @@ export default function Footer() {
             <Link href="/" className="block mb-4">
               <Image
                 src="https://ext.same-assets.com/2981809292/3108881295.svg"
-                alt="School Year Abroad Logo"
+                alt="BEC Logo"
                 width={120}
                 height={48}
                 className="h-12 w-auto"

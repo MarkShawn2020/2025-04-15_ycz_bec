@@ -5,8 +5,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "School Year Abroad (SYA) | High School Study Programs in France, Italy & Spain",
-  description: "School Year Abroad (SYA) offers yearlong and semester study abroad homestay programs for high school sophomores, juniors and seniors to Spain, Italy, France!",
+  title: "BEC (SYA) | High School Study Programs in France, Italy & Spain",
+  description: "BEC (SYA) offers yearlong and semester study abroad homestay programs for high school sophomores, juniors and seniors to Spain, Italy, France!",
 };
 
 export default function RootLayout({

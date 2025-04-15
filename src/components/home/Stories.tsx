@@ -63,7 +63,7 @@ const news = [
     id: 1,
     title: 'SYA Celebrates 60 Years of Global Education',
     date: 'June 1, 2023',
-    excerpt: 'School Year Abroad marks six decades of providing life-changing experiences to high school students.',
+    excerpt: 'BEC marks six decades of providing life-changing experiences to high school students.',
     link: '#'
   },
   {
