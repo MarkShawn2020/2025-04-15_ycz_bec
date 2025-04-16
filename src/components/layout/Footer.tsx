@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, MapPin, ExternalLink } from 'lucide-react';
+import { ContactDialog } from '@/components/ContactDialog';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,10 +37,7 @@ export default function Footer() {
           
           {/* Quick Links and Copyright */}
           <div className="flex items-center gap-4 text-sm">
-            <Link href="mailto:linasong@alum.mit.edu" className="group inline-flex items-center text-gray-200 hover:text-white transition-colors">
-              Contact Us
-              <ExternalLink className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100 transition-opacity" />
-            </Link>
+
             <span className="text-gray-300">© {currentYear} BEC</span>
           </div>
         </div>

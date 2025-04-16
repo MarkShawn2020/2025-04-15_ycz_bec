@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Search, Menu, X } from 'lucide-react';
+import { ContactDialog } from '@/components/ContactDialog';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,9 +47,10 @@ export default function Header() {
                 <Link href="#past-events" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Past Events
                 </Link>
-                <Link href="mailto:linasong@alum.mit.edu" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
-                  Contact Us
-                </Link>
+                <ContactDialog 
+                  variant="flat" 
+                  className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red cursor-pointer" 
+                />
 
             {/* Search button */}
             <button className="text-sya-blue hover:text-sya-red">
@@ -85,9 +87,10 @@ export default function Header() {
                 <Link href="#past-events" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Past Events
                 </Link>
-                <Link href="mailto:linasong@alum.mit.edu" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
-                  Contact Us
-                </Link>
+                <ContactDialog 
+                  variant="flat" 
+                  className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red cursor-pointer" 
+                />
             </nav>
 
 

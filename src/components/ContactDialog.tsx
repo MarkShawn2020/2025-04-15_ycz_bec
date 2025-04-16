@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
+import { ExternalLink } from 'lucide-react';
 
 import {
   Dialog,
@@ -34,11 +35,16 @@ const formSchema = z.object({
 });
 
 type ContactDialogProps = {
-  variant?: 'default' | 'prominent';
+  variant?: 'default' | 'prominent' | 'flat';
   className?: string;
+  showIcon?: boolean;
 };
 
-export function ContactDialog({ variant = 'default', className = '' }: ContactDialogProps) {
+export function ContactDialog({ 
+  variant = 'default', 
+  className = '',
+  showIcon = false
+}: ContactDialogProps) {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -73,19 +79,38 @@ export function ContactDialog({ variant = 'default', className = '' }: ContactDi
     }
   }
 
-  // 不同的按钮样式
-  const buttonClasses = variant === 'prominent' 
-    ? "bg-sya-red hover:bg-sya-red/90 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-lg transition-all hover:shadow-xl transform hover:scale-105 " + className
-    : "bg-sya-blue text-white hover:bg-sya-blue/90 " + className;
+  // 不同的按钮样式和文本
+  let buttonContent;
+  let buttonComponent;
 
-  const buttonText = variant === 'prominent' ? '立即咨询' : 'Contact Us';
+  if (variant === 'flat') {
+    // 扁平样式，用于菜单和页脚
+    buttonContent = (
+      <span className={className}>
+        Contact Us
+        {showIcon && <ExternalLink className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100 transition-opacity inline-block" />}
+      </span>
+    );
+    buttonComponent = buttonContent;
+  } else {
+    // 按钮样式
+    const buttonClasses = variant === 'prominent' 
+      ? "bg-sya-red hover:bg-sya-red/90 text-white font-bold py-3 px-6 rounded-lg shadow-lg text-lg transition-all hover:shadow-xl transform hover:scale-105 " + className
+      : "bg-sya-blue text-white hover:bg-sya-blue/90 " + className;
+
+    const buttonText = variant === 'prominent' ? 'Contact Us' : 'Contact Us';
+    
+    buttonComponent = (
+      <Button className={buttonClasses}>
+        {buttonText}
+      </Button>
+    );
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className={buttonClasses}>
-          {buttonText}
-        </Button>
+        {buttonComponent}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

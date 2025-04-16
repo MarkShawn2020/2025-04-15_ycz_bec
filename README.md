@@ -120,10 +120,12 @@ import { ContactDialog } from '@/components/ContactDialog';
 
 组件接受以下属性:
 
-- `variant`: 可以是 `'default'` 或 `'prominent'`
+- `variant`: 按钮的显示样式
   - `default`: 蓝色标准按钮
   - `prominent`: 红色大号按钮，更加醒目
+  - `flat`: 文本样式，适用于导航菜单和页脚
 - `className`: 自定义CSS类
+- `showIcon`: 是否在flat模式下显示外部链接图标（默认为false）
 
 ### 示例
 
@@ -135,6 +137,23 @@ import { ContactDialog } from '@/components/ContactDialog';
 醒目按钮:
 ```tsx
 <ContactDialog variant="prominent" />
+```
+
+导航菜单中的文本链接:
+```tsx
+<ContactDialog 
+  variant="flat" 
+  className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red cursor-pointer" 
+/>
+```
+
+页脚中的文本链接（带图标）:
+```tsx
+<ContactDialog 
+  variant="flat" 
+  className="group inline-flex items-center text-gray-200 hover:text-white transition-colors cursor-pointer" 
+  showIcon={true}
+/>
 ```
 
 自定义样式:
