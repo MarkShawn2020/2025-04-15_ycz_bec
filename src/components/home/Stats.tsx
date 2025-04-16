@@ -16,7 +16,7 @@ interface Stat {
 const stats: Stat[] = [
   { id: 1, label: 'Founded', value: 2018, startValue: new Date().getFullYear() },
   { id: 2, label: 'Alumni', value: 1000, startValue: 0, suffix: '+' },
-  { id: 3, label: "24'-25' Enrollment ", value: 198, startValue: 0 },
+  { id: 3, label: "24'-25' Enrollment ", value: 98, startValue: 0 },
   { id: 4, label: 'Countries', value: 5, startValue: 0 },
   { id: 5, label: 'Cities', value: 10, startValue: 0, suffix: '+' },
   { id: 6, label: 'Schools', value: 29, startValue: 0 }

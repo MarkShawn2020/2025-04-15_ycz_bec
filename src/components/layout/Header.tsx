@@ -23,7 +23,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="block">
               <Image
-                src="/logo.png"
+                src="/BEC.png"
                 alt="Logo"
                 width={150}
                 height={60}

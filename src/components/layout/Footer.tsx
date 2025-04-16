@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="block">
               <Image
-                src="/logo.png"
+                src="/BEC.png"
                 alt="BEC Logo"
                 width={150}
                 height={60}
