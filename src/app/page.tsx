@@ -11,9 +11,9 @@ export default function Home() {
       <Stats />
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">About Boston Education Consulting
+          <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">About Boston Education Consulting (BEC)
           </h2>
-          <p className="text-lg text-center max-w-4xl mx-auto mb-16">
+          <p className="text-lg text-center max-w-6xl mx-auto mb-16">
           Boston Education Consulting (BEC) is a college access organization providing educational support for high school and middle school students. 
           
           Each year, we bring groups of highly selective domestic and international students to visit Boston or China for a rigorous 2-week summer program or 1-week winter program. 
