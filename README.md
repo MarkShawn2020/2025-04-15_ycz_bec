@@ -37,7 +37,48 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Supabase 设置
 
-项目使用Supabase作为后端服务，用于存储用户咨询信息。按照以下步骤设置：
+项目使用Supabase作为后端服务，用于存储用户咨询信息。
+
+### 方法一：使用Supabase CLI（推荐）
+
+1. 安装 [Supabase CLI](https://supabase.com/docs/guides/cli)
+   ```bash
+   # 使用Homebrew (macOS)
+   brew install supabase/tap/supabase
+
+   # 使用NPM
+   npm install -g supabase
+   ```
+
+2. 登录您的Supabase账户
+   ```bash
+   supabase login
+   ```
+
+3. 本地开发时，启动本地Supabase容器
+   ```bash
+   pnpm db:start
+   ```
+
+4. 运行数据库迁移
+   ```bash
+   pnpm db:migrate
+   ```
+
+5. 如需创建新的迁移，可以使用：
+   ```bash
+   pnpm db:new migration_name
+   ```
+   这将在`supabase/migrations`目录下创建一个新的迁移文件。
+
+6. 将本地更改推送到远程Supabase项目：
+   ```bash
+   supabase db push --db-url=YOUR_SUPABASE_DB_URL
+   ```
+
+### 方法二：手动设置
+
+如果不使用CLI，请按照以下步骤手动设置：
 
 1. 在 [Supabase](https://supabase.io) 创建一个新项目
 2. 创建一个名为 `contacts` 的新表，包含以下字段:
