@@ -16,19 +16,19 @@ const Hero: React.FC = () => {
   const countryVideos: CountryVideo[] = [
     {
       country: 'NEW YORK',
-      videoUrl: '/视频1.mp4'
+      videoUrl: '/video01.mp4'
     },
     {
       country: 'BOSTON',
-      videoUrl: '/视频2.mp4'
+      videoUrl: '/video02.mp4'
     },
     {
       country: 'BEI JING',
-      videoUrl: '/视频4.mp4'
+      videoUrl: '/video03.mp4'
     },
     {
       country: 'SHANG HAI',
-      videoUrl: '/视频3.mp4'
+      videoUrl: '/video04.mp4'
     },
 
   ];

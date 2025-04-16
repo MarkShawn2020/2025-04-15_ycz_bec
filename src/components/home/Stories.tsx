@@ -13,12 +13,12 @@ import {
 
 // Story images from the public/stories folder
 const pastEventsImages = [
-  '/stories/图片3.png',
-  '/stories/图片4.png',
-  '/stories/图片5.png',
-  '/stories/图片6.png',
-  '/stories/图片7.png',
-  '/stories/图片8.png'
+  '/stories/图片3.jpeg',
+  '/stories/图片4.jpeg',
+  '/stories/图片5.jpeg',
+  '/stories/图片6.jpeg',
+  '/stories/图片7.jpeg',
+  '/stories/图片8.jpeg'
 ];
 
 // Story content to match with images
