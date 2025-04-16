@@ -34,3 +34,67 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Supabase 设置
+
+项目使用Supabase作为后端服务，用于存储用户咨询信息。按照以下步骤设置：
+
+1. 在 [Supabase](https://supabase.io) 创建一个新项目
+2. 创建一个名为 `contacts` 的新表，包含以下字段:
+   - `id`: uuid (主键，默认生成)
+   - `name`: text (非空)
+   - `email`: text (非空)
+   - `phone`: text (非空)
+   - `message`: text (非空)
+   - `created_at`: timestamp with timezone (默认: now())
+3. 在项目的 "Settings > API" 页面找到API URL和anon key
+4. 将这些值添加到 `.env` 文件中:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+完成这些步骤后，项目中的咨询表单将保存用户咨询到Supabase数据库中。
+
+## 咨询表单使用指南
+
+项目中已集成了一个联系表单组件 `ContactDialog`，它允许访问者提交咨询请求并存储在Supabase数据库中。
+
+### 基本用法
+
+```tsx
+import { ContactDialog } from '@/components/ContactDialog';
+
+// 基本用法
+<ContactDialog />
+```
+
+### 属性选项
+
+组件接受以下属性:
+
+- `variant`: 可以是 `'default'` 或 `'prominent'`
+  - `default`: 蓝色标准按钮
+  - `prominent`: 红色大号按钮，更加醒目
+- `className`: 自定义CSS类
+
+### 示例
+
+标准按钮:
+```tsx
+<ContactDialog />
+```
+
+醒目按钮:
+```tsx
+<ContactDialog variant="prominent" />
+```
+
+自定义样式:
+```tsx
+<ContactDialog variant="prominent" className="bg-green-500 hover:bg-green-400" />
+```
+
+### 管理联系请求
+
+提交的联系表单会存储在Supabase的`contacts`表中。您可以通过Supabase仪表板查看和管理这些请求。

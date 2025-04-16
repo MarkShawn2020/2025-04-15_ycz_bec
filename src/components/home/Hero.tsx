@@ -2,6 +2,7 @@
 
 import type React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import { ContactDialog } from '@/components/ContactDialog';
 
 interface CountryVideo {
   country: string
@@ -96,6 +97,10 @@ const Hero: React.FC = () => {
         </h1>
       </div>
 
+      {/* Consultation Button - NEW ADDITION */}
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-10">
+        <ContactDialog variant="prominent" />
+      </div>
 
       {/* Controls */}
       <div className="absolute bottom-4 right-4 flex space-x-2">

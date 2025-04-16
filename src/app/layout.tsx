@@ -3,6 +3,7 @@ import "./globals.css";
 import { inter, lato, bebasNeue } from "./fonts";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "BEC (SYA) | High School Study Programs in France, Italy & Spain",
@@ -22,6 +23,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Toaster position="top-right" />
       </body>
     </html>
   );
