@@ -4,8 +4,8 @@ import Link from 'next/link';
 const locations = [
   {
     id: 1,
-    country: 'USA',
-    city: 'Boston, MA',
+    country: 'Boston, USA',
+    city: 'US Program',
     description: "BEC US program will be hosted on MIT/Harvard/BU campus with dormitory, classrooms, and meals provided. All courses are designed and taught by MIT and Harvard professors and students. ",
     imageSrc: '/图片1.png',
     altText: 'View of Rennes, France',
@@ -13,8 +13,8 @@ const locations = [
   },
   {
     id: 2,
-    country: 'China',
-    city: 'Beijing, China',
+    country: 'Beijing, China',
+    city: 'China Program',
     description: "BEC China program will be hosted on Tsinghua/Peking campus with dormitory, classrooms, and meals provided. All courses are designed and taught by Tsinghua and Peking University professors and students. ",
     imageSrc: '/图片2.png',
     altText: 'View of Zaragoza, Spain',

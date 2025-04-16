@@ -32,16 +32,16 @@ const storyContent = [
     description: 'Explore how our students engage with local communities'
   },
   {
-    title: 'Academic Excellence',
-    description: 'See how our students excel in international classroom settings'
+    title: 'Host Family Experience',
+    description: 'Experience the unique connections formed with host families'
   },
   {
     title: 'Global Perspectives',
-    description: 'Learn how SYA broadens horizons and builds global citizens'
+    description: 'Learn how BEC broadens horizons and builds global citizens'
   },
   {
-    title: 'Host Family Experience',
-    description: 'Experience the unique connections formed with host families'
+    title: 'Academic Excellence',
+    description: 'See how our students excel in international classroom settings'
   },
   {
     title: 'Travel Adventures',
@@ -69,7 +69,7 @@ export default function Stories() {
   return (
     <div className="bg-slate-50 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">STORIES</h2>
+        <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">Past Events</h2>
         
         <div className="relative">
           <Carousel
