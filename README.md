@@ -73,8 +73,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 6. 将本地更改推送到远程Supabase项目：
    ```bash
-   supabase db push --db-url=YOUR_SUPABASE_DB_URL
+   # 链接到远程项目(仅首次需要)
+   supabase link --project-ref your-project-ref
+   
+   # 推送迁移到远程数据库
+   pnpm db:push
    ```
+
+   > 注意: `your-project-ref` 是您的Supabase项目ID，可以从Supabase URL中找到: `https://<project-ref>.supabase.co`
 
 ### 方法二：手动设置
 
