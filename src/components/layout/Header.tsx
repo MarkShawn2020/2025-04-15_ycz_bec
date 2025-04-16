@@ -73,16 +73,16 @@ export default function Header() {
         <div className="lg:hidden bg-white border-t border-gray-200 py-2">
           <div className="container mx-auto px-4">
             <nav className="flex flex-col space-y-4 py-4">
-            <Link href="/about" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+            <Link href="#desc" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   About BEC
                 </Link>
-                <Link href="/admission" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="#us-program" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   US Program
                 </Link>
-                <Link href="/programs" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="#china-program" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   China Program
                 </Link>
-                <Link href="/life-at-sya" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="#past-events" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Past Events
                 </Link>
                 <Link href="mailto:linasong@alum.mit.edu" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
@@ -90,25 +90,7 @@ export default function Header() {
                 </Link>
             </nav>
 
-            <div className="py-4 border-t border-gray-100">
-              <div className="flex flex-col space-y-2">
-                <h3 className="font-semibold text-sya-blue">Campuses</h3>
-                <Link href="/france" className="text-sya-blue hover:text-sya-red px-2 py-1">France</Link>
-                <Link href="/italy" className="text-sya-blue hover:text-sya-red px-2 py-1">Italy</Link>
-                <Link href="/spain" className="text-sya-blue hover:text-sya-red px-2 py-1">Spain</Link>
-              </div>
 
-              <div className="mt-4">
-                <h3 className="font-semibold text-sya-blue">Quicklinks</h3>
-                <div className="flex flex-col space-y-2 mt-2">
-                  <Link href="/about/contact" className="text-sya-blue hover:text-sya-red px-2 py-1">Contact</Link>
-                  <Link href="/apply-now" className="text-sya-blue hover:text-sya-red px-2 py-1">Apply</Link>
-                  <Link href="/alumni-friends" className="text-sya-blue hover:text-sya-red px-2 py-1">Alumni</Link>
-                  <Link href="/alumni-friends/make-a-gift" className="text-sya-blue hover:text-sya-red px-2 py-1">Give</Link>
-                  <Link href="https://sya.myschoolapp.com/app#login" className="text-sya-blue hover:text-sya-red px-2 py-1">mySYA Portal</Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       )}
