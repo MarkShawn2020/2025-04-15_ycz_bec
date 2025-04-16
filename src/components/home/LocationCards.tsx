@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const locations = [
   {
-    id: 1,
+    id: 'us-program',
     country: 'Boston, USA',
     city: 'US Program',
     description: "BEC US program will be hosted on MIT/Harvard/BU campus with dormitory, classrooms, and meals provided. All courses are designed and taught by MIT and Harvard professors and students. ",
@@ -12,7 +12,7 @@ const locations = [
     link: '/france'
   },
   {
-    id: 2,
+    id: 'china-program',
     country: 'Beijing, China',
     city: 'China Program',
     description: "BEC China program will be hosted on Tsinghua/Peking campus with dormitory, classrooms, and meals provided. All courses are designed and taught by Tsinghua and Peking University professors and students. ",
@@ -28,6 +28,7 @@ export default function LocationCards() {
       <div className="container mx-auto px-4">
         {locations.map((location, index) => (
           <div
+            id={location.id}
             key={location.id}
             className={`flex flex-col md:flex-row items-center mb-16 last:mb-0 gap-4 ${
               index % 2 === 1 ? 'md:flex-row-reverse' : ''

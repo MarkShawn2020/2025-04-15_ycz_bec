@@ -34,16 +34,16 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-          <Link href="/about" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+          <Link href="#desc" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   About BEC
                 </Link>
-                <Link href="/admission" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="#us-program" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   US Program
                 </Link>
-                <Link href="/programs" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="#china-program" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   China Program
                 </Link>
-                <Link href="/life-at-sya" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
+                <Link href="#past-events" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">
                   Past Events
                 </Link>
                 <Link href="mailto:linasong@alum.mit.edu" className="hover:text-sya-red border-b-2 border-transparent hover:border-sya-red">

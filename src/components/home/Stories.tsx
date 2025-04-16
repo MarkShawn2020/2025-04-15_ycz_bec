@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 
 // Story images from the public/stories folder
-const storyImages = [
+const pastEventsImages = [
   '/stories/图片3.png',
   '/stories/图片4.png',
   '/stories/图片5.png',
@@ -22,7 +22,7 @@ const storyImages = [
 ];
 
 // Story content to match with images
-const storyContent = [
+const pastEvents = [
   {
     title: 'Student Experience',
     description: 'Discover the transformative journey of our students abroad'
@@ -49,7 +49,7 @@ const storyContent = [
   }
 ];
 
-export default function Stories() {
+export default function PastEvents() {
   const [api, setApi] = useState<CarouselApi>();
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -67,7 +67,7 @@ export default function Stories() {
   };
 
   return (
-    <div className="bg-slate-50 py-16">
+    <div id='past-events' className="bg-slate-50 py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">Past Events</h2>
         
@@ -81,7 +81,7 @@ export default function Stories() {
             setApi={handleApiChange}
           >
             <CarouselContent>
-              {storyImages.map((image, index) => (
+              {pastEventsImages.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-2/3 lg:basis-1/2">
                   <div className="relative aspect-video overflow-hidden rounded-xl">
                     <Image
@@ -93,15 +93,15 @@ export default function Stories() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-2xl font-bold">{storyContent[index].title}</h3>
-                      <p className="text-sm mt-2 max-w-md">{storyContent[index].description}</p>
+                      <h3 className="text-2xl font-bold">{pastEvents[index].title}</h3>
+                      <p className="text-sm mt-2 max-w-md">{pastEvents[index].description}</p>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8">
-              {storyImages.map((_, index) => (
+              {pastEventsImages.map((_, index) => (
                 <div
                   key={index}
                   className={`h-2 w-2 rounded-full mx-1 cursor-pointer ${

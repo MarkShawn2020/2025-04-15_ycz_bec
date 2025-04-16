@@ -2,14 +2,14 @@ import React from 'react';
 import Hero from '@/components/home/Hero';
 import Stats from '@/components/home/Stats';
 import LocationCards from '@/components/home/LocationCards';
-import Stories from '@/components/home/Stories';
+import PastEvents from '@/components/home/Stories';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
       <Stats />
-      <section className="py-16 bg-gray-50">
+      <section id='desc' className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-bebas text-sya-blue mb-8 text-center">About Boston Education Consulting (BEC)
           </h2>
@@ -25,7 +25,7 @@ export default function Home() {
         </div>
       </section>
       <LocationCards />
-      <Stories />
+      <PastEvents />
     </div>
   );
 }
