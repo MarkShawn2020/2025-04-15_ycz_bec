@@ -6,8 +6,8 @@ import Footer from "@/components/layout/Footer";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "BEC (SYA) | High School Study Programs in France, Italy & Spain",
-  description: "BEC (SYA) offers yearlong and semester study abroad homestay programs for high school sophomores, juniors and seniors to Spain, Italy, France!",
+  title: "BEC | Boston Education Consulting | Aboard Study Programs in USA & China",
+  description: "BEC offers premier study abroad programs for high school students to USA & China with personalized education consulting and homestay experiences.",
 };
 
 export default function RootLayout({
