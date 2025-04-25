@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-sm text-gray-200">
             <div className="flex items-center gap-1">
               <MapPin className="h-4 w-4 text-sya-red flex-shrink-0" />
-              <span>105 Ridge Lane, Waltham, MA, 02452</span>
+              <span>One Seaport Square, 77 Sleeper St Boston, MA 02210</span>
             </div>
             {/* <div className="flex items-center gap-1">
               <Mail className="h-4 w-4 text-sya-red flex-shrink-0" />
