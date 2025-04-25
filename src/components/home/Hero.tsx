@@ -2,7 +2,7 @@
 
 import type React from 'react';
 import { useState, useEffect, useRef } from 'react';
-import { ContactDialog } from '@/components/ContactDialog';
+import { EmailLink } from '@/components/EmailLink';
 
 interface CountryVideo {
   country: string
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
 
       {/* Consultation Button - NEW ADDITION */}
       <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-10">
-        <ContactDialog variant="prominent" />
+        <EmailLink variant="prominent" />
       </div>
 
       {/* Controls */}

@@ -3,7 +3,7 @@ import Hero from '@/components/home/Hero';
 import Stats from '@/components/home/Stats';
 import LocationCards from '@/components/home/LocationCards';
 import PastEvents from '@/components/home/Stories';
-import { ContactDialog } from '@/components/ContactDialog';
+import { EmailLink } from '@/components/EmailLink';
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
           The program is designed for students to explore the world of engineering, gain experience of college life, and take on a culture adventure.
           </p>
           <div className="flex justify-center">
-            <ContactDialog />
+            <EmailLink />
           </div>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function Home() {
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Contact us now to learn more about our educational programs and how they can help shape your future.
           </p>
-          <ContactDialog variant="prominent" className="bg-white text-sya-blue hover:bg-white/90" />
+          <EmailLink variant="prominent" className="bg-white text-sya-blue hover:bg-white/90" />
         </div>
       </section>
     </div>

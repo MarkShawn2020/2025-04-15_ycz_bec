@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, MapPin, ExternalLink } from 'lucide-react';
-import { ContactDialog } from '@/components/ContactDialog';
+import { EmailLink } from '@/components/EmailLink';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
